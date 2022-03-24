@@ -19,12 +19,10 @@ class BlurView {
     }
 
     func toggleBlur( _ status: Bool ) {
-        if autoBlur {
-            if status {
-                blurScreen()
-            } else {
-                removeBlurScreen()
-            }
+        if status {
+            blurScreen()
+        } else {
+            removeBlurScreen()
         }
     }
 
@@ -40,7 +38,7 @@ class BlurView {
         }
 
         screen?.removeFromSuperview()
-        
+
         if customOverlay == nil || self.autoBlur {
             screen = UIScreen.main.snapshotView(afterScreenUpdates: false)
             

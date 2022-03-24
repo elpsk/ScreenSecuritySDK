@@ -5,7 +5,7 @@
 
 import UIKit
 
-public class ScreenSecuritySDK {
+public class ScreenSecurity {
 
     private var screen: UIView?
     private var window: UIWindow
