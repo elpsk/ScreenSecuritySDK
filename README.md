@@ -17,7 +17,7 @@ Add this repo as **Package Manager**.
 
 `import ScreenSecuritySDK`
 
--
+---
 
 What you need to make it works is a `UIWindow`.  
 It's suggested to implement in `UISceneDelegate` or `UIApplicationDelegate`, depending on your implementation.
@@ -34,7 +34,7 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
 }
 
 ```
---
+---
 
 #### Security Types
 The allowed security types of detections are the following:
@@ -48,7 +48,7 @@ enum SecurityIdentifierType {
     case screenshot
 }
 ```
---
+---
 
 #### Security Rules
 
@@ -91,7 +91,7 @@ let mirroringRule = ScreenSecurityRules {
 }
 ```
 
---
+---
 
 In case you implement the `SecurityIdentifierType.screenCache` rule, you need an additional parameter:  
 `sceneDelegate` or `appDelegate` (depending on your implementation).
@@ -116,7 +116,7 @@ func sceneDidEnterBackground(_ scene: UIScene) {
 }
 ```
 
---
+---
 
 ### Composing rules
 
@@ -144,7 +144,7 @@ Params are:
 - `autoBlue: Bool`: to use integrated window blur.  
 - `customOverlay: UIView?`: a custom view that override integrated blur
 
---
+---
 
 **Original app screenshot**:  
 ![](sshots/example-00.png)  
@@ -152,7 +152,7 @@ Params are:
 **Integrated blur applied:**  
 ![](sshots/example-02.png)  
 
---
+---
 
 ### Use custom view
 
@@ -169,7 +169,7 @@ In this way you'll see a red box instead of blur.
 **Custom view applied:**  
 ![](sshots/example-01.png)  
 
---
+---
 
 Have fun.
 
