@@ -26,8 +26,5 @@ let package = Package(
             dependencies: [
 //                "AVKit"
             ]),
-        .testTarget(
-            name: "ScreenSecuritySDKTests",
-            dependencies: ["ScreenSecuritySDK"]),
     ]
 )
