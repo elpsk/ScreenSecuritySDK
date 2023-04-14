@@ -21,7 +21,11 @@ public class ScreenSecurity {
         self.window = window
     }
     
-    public func configure( rules: [ScreenSecurityRules], autoBlur: Bool, customOverlay: UIView? = nil ) {
+    public func configure(
+        rules: [ScreenSecurityRules],
+        autoBlur: Bool,
+        customOverlay: UIView? = nil
+    ) {
         self.rules = rules
         self.autoBlur = autoBlur
         self.customOverlay = customOverlay
@@ -61,13 +65,17 @@ public class ScreenSecurity {
             }
         }
         
-        if let rule = self.rules.first(where: { $0.type == .screenshot }) {
-            let ssObserver = ScreenshotsObserver()
-            ssObserver.observe { arg, status in
-                self.blurView?.toggleBlur(status)
-                rule.callback?(arg, status)
-            }
-        }
+//        if let rule = self.rules.first(where: { $0.type == .screenshot }), let lockedView = lockedScreenshotView {
+//            let viewToHide = ScreenshotPreventingView(contentView: lockedView)
+//            viewToHide.preventScreenCapture = true
+//            rule.callback?(nil, true)
+//
+//            let ssObserver = ScreenshotsObserver()
+//            ssObserver.observeScreenshot(lockedView: lockedView, completion: { arg, status in
+//                self.blurView?.toggleBlur(status)
+//                rule.callback?(arg, status)
+//            })
+//        }
 
         if let rule = self.rules.first(where: { $0.type == .mirroring }) {
             let mrrObserver = MirroringObserver()

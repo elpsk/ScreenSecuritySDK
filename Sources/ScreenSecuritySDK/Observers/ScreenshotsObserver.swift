@@ -13,4 +13,10 @@ class ScreenshotsObserver: Observable {
         }
     }
 
+    func observeScreenshot(lockedView: UIView, completion: ObservableResponse) {
+        let viewToHide = ScreenshotPreventingView(contentView: lockedView)
+        viewToHide.preventScreenCapture = true
+        completion?(nil, true)
+    }
+
 }
